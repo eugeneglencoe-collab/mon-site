@@ -1,0 +1,24 @@
+// Couleurs
+$bg-dark: #0A0A0A;
+$ivory: #F5F5F0;
+$champagne: #C5A572;
+$muted: rgba(245,245,240,0.55);
+
+// Typographie
+$font-sans: "Inter", "Poppins", "Montserrat", system-ui;
+
+// Ombres
+$shadow-1: 0 6px 24px rgba(2,6,10,0.6);
+$shadow-soft: 0 10px 30px rgba(2,6,10,0.5);
+
+// Rayons de bordure
+$radius-lg: 14px;
+$radius-md: 10px;
+$radius-sm: 8px;
+
+// Transitions
+$transition-fast: 180ms cubic-bezier(.2,.9,.2,1);
+$transition-slow: 320ms cubic-bezier(.2,.8,.2,1);
+
+// Max-width global
+$maxwidth: 1200px;
