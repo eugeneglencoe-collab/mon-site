@@ -299,3 +299,15 @@ button[disabled],.btn[disabled]{opacity:.45;cursor:not-allowed}
    - To tune "gilded" effect, tweak --champagne and shadows.
    - For production, consider splitting critical CSS and deferring large rules.
 */
+.card img {
+  width: 100%;           /* l’image remplit la carte */
+  height: 200px;         /* hauteur fixe */
+  object-fit: cover;     /* pas de déformation */
+  border-radius: 12px;   /* coins arrondis */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* légère profondeur */
+  transition: transform 0.3s ease; /* effet hover */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* léger zoom au survol */
+}
