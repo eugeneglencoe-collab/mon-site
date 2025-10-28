@@ -1,39 +1,100 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Pubflix</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pubflix — Regardez. Gagnez.</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Pubflix — Prototype : découvrez des publicités vidéo et gagnez des points. Démo pour investisseurs.">
 </head>
 <body>
-  <header class="navbar">
-    <h1>🎬 Pubflix</h1>
-    <div class="menu">
-      <span id="userName">Invité</span>
-      <span class="points" id="userPoints">0 pts</span>
-      <a href="dashboard.html">Tableau de bord</a>
-      <a href="admin.html">Admin</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Pubflix logo" class="logo" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <h1>Pubflix</h1>
+        <p class="tag">Regardez. Gagnez. Découvrez.</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button id="btnOpenLogin" class="btn ghost">Se connecter</button>
+      <a href="dashboard.html" class="btn link-light">Tableau de bord</a>
+      <a href="admin.html" class="btn link-light">Admin</a>
+    </nav>
+
+    <div class="user-summary" id="userSummary" aria-live="polite">
+      <span id="userNameDisplay">Invité</span>
+      <span class="points" id="userPointsDisplay">0 pts</span>
     </div>
   </header>
 
-  <main>
-    <h2>Publicités disponibles</h2>
-    <div id="catalogue" class="grid"></div>
+  <main class="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Bienvenue sur Pubflix</h2>
+        <p class="lead">Choisis une publicité, regarde jusqu'à la fin et gagne des points. Prototype sécurisé pour démonstration.</p>
+        <div class="hero-actions">
+          <button id="btnCTA" class="btn primary">Commencer maintenant</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="catalog-title">
+      <div class="section-header">
+        <h3 id="catalog-title">Catalogue — sélections recommandées</h3>
+        <div class="filters">
+          <label for="searchInput" class="sr-only">Rechercher</label>
+          <input id="searchInput" type="search" placeholder="Rechercher une pub..." />
+        </div>
+      </div>
+
+      <div id="catalogGrid" class="catalog-grid" role="list"></div>
+    </section>
   </main>
 
-  <div id="playerOverlay" class="overlay hidden">
-    <div class="player">
-      <h3 id="adTitle"></h3>
-      <iframe id="adFrame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
-      <div class="actions">
-        <span id="timer">--</span>
-        <button id="finishBtn" disabled>J'ai terminé</button>
-        <button id="closeBtn">Fermer</button>
+  <!-- Player modal -->
+  <div id="playerModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+    <div class="modal-card">
+      <header class="modal-head">
+        <h4 id="playerTitle">Titre de la publicité</h4>
+        <div class="meta" id="playerMeta">Durée • Gain</div>
+        <button id="btnClosePlayer" class="btn ghost small">Fermer</button>
+      </header>
+
+      <div class="player-body">
+        <div id="playerContainer" class="player-frame" aria-hidden="false">
+          <!-- iframe injected here -->
+        </div>
+      </div>
+
+      <footer class="modal-foot">
+        <div class="timer" id="playerTimer">00:00</div>
+        <div class="actions">
+          <button id="btnValidate" class="btn primary" disabled>J'ai terminé</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Lightweight login modal -->
+  <div id="loginModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card small">
+      <header class="modal-head"><h4>Se connecter</h4></header>
+      <div class="padded">
+        <label for="loginName">Pseudo</label>
+        <input id="loginName" type="text" placeholder="Ton pseudo" />
+        <small>Le prototype stocke les données localement. Aucun mot de passe requis.</small>
+        <div style="margin-top:12px">
+          <button id="btnLoginConfirm" class="btn primary">Valider</button>
+          <button id="btnLoginCancel" class="btn ghost">Annuler</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
