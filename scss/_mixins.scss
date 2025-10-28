@@ -1,0 +1,23 @@
+// Transition universelle
+@mixin transition($speed: $transition-fast){
+  transition: all $speed;
+}
+
+// Ombre sur les cartes
+@mixin card-shadow{
+  box-shadow: $shadow-1;
+  &:hover{
+    transform: translateY(-8px);
+    box-shadow: $shadow-soft;
+  }
+}
+
+// Boutons stylés
+@mixin button-style($bg, $color){
+  background: $bg;
+  color: $color;
+  border-radius: $radius-md;
+  font-weight: 600;
+  padding: 10px 14px;
+  @include transition();
+}
