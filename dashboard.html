@@ -4,45 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tableau de bord — Pubflix</title>
+  <meta name="description" content="Votre tableau de bord Pubflix — points, historique et badges." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="page-dashboard">
   <header class="site-header">
-    <div class="brand">
-      <img src="assets/logo.png" alt="Pubflix logo" class="logo" onerror="this.style.display='none'">
-      <div class="brand-text"><h1>Pubflix</h1><p class="tag">Tableau de bord</p></div>
+    <div class="header-inner">
+      <div class="brand-left">
+        <img src="https://i.imgur.com/Uzr1KqT.png" alt="Pubflix" class="logo" />
+        <div class="brand-text">
+          <h1>Pubflix</h1>
+          <p class="brand-tag">Mon tableau de bord</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+      </nav>
     </div>
-    <nav class="nav">
-      <a href="index.html" class="btn link-light">Accueil</a>
-      <a href="admin.html" class="btn link-light">Admin</a>
-    </nav>
-    <div class="user-summary" id="userSummaryDash"></div>
   </header>
 
   <main class="dashboard-main">
-    <section class="stats-grid">
-      <div class="stat-card">
+    <section class="dashboard-top">
+      <div class="stat">
         <h3>Points</h3>
-        <div id="statPoints" class="stat-value">0</div>
+        <div id="dashPoints" class="big-num">0</div>
       </div>
-      <div class="stat-card">
-        <h3>Vues totales</h3>
-        <div id="statViews" class="stat-value">0</div>
+      <div class="stat">
+        <h3>Vues</h3>
+        <div id="dashViews" class="big-num">0</div>
       </div>
-      <div class="stat-card">
-        <h3>Publicités regardées</h3>
-        <ul id="listSeen" class="seen-list"></ul>
+      <div class="stat">
+        <h3>Temps total</h3>
+        <div id="dashTime" class="big-num">0s</div>
       </div>
     </section>
 
     <section class="history">
-      <h4>Historique détaillé</h4>
-      <table class="table" id="historyTable">
-        <thead><tr><th>Date</th><th>Pub</th><th>Durée</th><th>Gain</th><th>Validée</th></tr></thead>
+      <h4>Historique des visionnages</h4>
+      <table class="table" id="historyTable" aria-live="polite">
+        <thead><tr><th>Date</th><th>Publicité</th><th>Gain</th><th>Durée</th></tr></thead>
         <tbody></tbody>
       </table>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><p class="muted">© Pubflix — Prototype</p></div>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
