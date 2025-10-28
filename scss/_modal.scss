@@ -1,0 +1,13 @@
+.modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:120;
+  background: linear-gradient(180deg, rgba(2,6,10,0.8), rgba(2,6,10,0.9));
+  padding:18px;
+}
+.modal-card{
+  width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:14px;overflow:hidden;box-shadow:$shadow-soft;
+  display:flex;flex-direction:column;
+}
+.modal-body{background:#000;padding:0;}
+.player-frame{height:520px;}
+@media(max-width:720px){.player-frame{height:280px;}}
