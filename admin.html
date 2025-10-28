@@ -4,33 +4,58 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Admin — Pubflix</title>
+  <meta name="description" content="Administration prototype Pubflix — gérer les publicités." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="page-admin">
   <header class="site-header">
-    <div class="brand"><img src="assets/logo.png" alt="logo" class="logo" onerror="this.style.display='none'"><div class="brand-text"><h1>Pubflix</h1><p class="tag">Administration</p></div></div>
-    <nav class="nav"><a href="index.html" class="btn link-light">Accueil</a><a href="dashboard.html" class="btn link-light">Tableau de bord</a></nav>
-    <div class="user-summary" id="userSummaryAdmin"></div>
+    <div class="header-inner">
+      <div class="brand-left">
+        <img src="https://i.imgur.com/Uzr1KqT.png" alt="Pubflix" class="logo" />
+        <div class="brand-text">
+          <h1>Pubflix</h1>
+          <p class="brand-tag">Administration</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link" href="dashboard.html">Tableau de bord</a>
+      </nav>
+    </div>
   </header>
 
   <main class="admin-main">
     <section class="admin-panel">
-      <h3>Ajouter une publicité</h3>
-      <form id="formAddAd" class="form">
-        <label>Titre</label><input id="adminTitle" required />
-        <label>Miniature (URL)</label><input id="adminThumb" placeholder="https://..." />
-        <label>Embed vidéo (YouTube embed URL)</label><input id="adminLink" required placeholder="https://www.youtube.com/embed/..." />
-        <label>Durée (s)</label><input id="adminDur" type="number" value="30" min="5" />
-        <label>Gain (points)</label><input id="adminGain" type="number" value="5" min="1" />
-        <div class="row"><button type="submit" class="btn primary">Ajouter</button> <button id="btnLoadSamples" type="button" class="btn ghost">Charger exemples</button> <button id="btnReset" type="button" class="btn ghost">Reset demo</button></div>
+      <h3>Ajouter / éditer une publicité</h3>
+      <form id="adForm" class="form">
+        <label for="adTitle">Titre</label>
+        <input id="adTitle" required maxlength="120" />
+        <label for="adThumb">Miniature (URL)</label>
+        <input id="adThumb" placeholder="https://..." />
+        <label for="adLink">Embed vidéo (YouTube embed URL)</label>
+        <input id="adLink" placeholder="https://www.youtube.com/embed/..." required />
+        <label for="adDur">Durée (s)</label>
+        <input id="adDur" type="number" min="5" value="30" />
+        <label for="adGain">Gain (pts)</label>
+        <input id="adGain" type="number" min="1" value="5" />
+        <div class="row">
+          <button id="saveAd" class="btn primary" type="submit">Enregistrer</button>
+          <button id="loadSamples" class="btn ghost" type="button">Charger exemples</button>
+          <button id="resetDemo" class="btn ghost" type="button">Reset demo</button>
+        </div>
       </form>
     </section>
 
     <section>
       <h3>Catalogue actuel</h3>
-      <div id="adminCatalog" class="catalog-grid small"></div>
+      <div id="adminGrid" class="catalog-grid"></div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><p class="muted">Prototype — les actions modifient localStorage</p></div>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
