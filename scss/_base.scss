@@ -1,0 +1,7 @@
+*{box-sizing:border-box;}
+html, body{height:100%;margin:0;font-family:$font-sans;background:$bg-dark;color:$ivory;line-height:1.45;}
+img{max-width:100%;height:auto;display:block;}
+a{color:$ivory;text-decoration:none;}
+a:hover, a:focus{opacity:.92;}
+h1,h2,h3,h4,h5{margin:0;font-weight:600;}
+.container{max-width:$maxwidth;margin:0 auto;padding:0 18px;}
