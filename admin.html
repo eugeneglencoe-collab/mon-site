@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Pubflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Administration</h1>
+    <a href="index.html">← Retour</a>
+  </header>
+
+  <main>
+    <section class="admin">
+      <h3>Ajouter une publicité</h3>
+      <label>Titre</label>
+      <input id="adTitleInput">
+      <label>Miniature (URL)</label>
+      <input id="adThumbInput">
+      <label>Lien vidéo (YouTube embed)</label>
+      <input id="adLinkInput">
+      <label>Durée (secondes)</label>
+      <input id="adDurationInput" type="number" value="30">
+      <label>Gain (points)</label>
+      <input id="adGainInput" type="number" value="5">
+      <button id="addAdBtn">Ajouter</button>
+    </section>
+
+    <section>
+      <h3>Catalogue actuel</h3>
+      <div id="adsList" class="grid small"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
