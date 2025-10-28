@@ -1,19 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon site</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    h1 { color: #333; }
-    a.button { display: inline-block; margin-top: 20px; padding: 10px 20px;
-      background: #007bff; color: white; border-radius: 5px; text-decoration: none; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pubflix — Prototype</title>
+<style>
+/* CSS du prototype ici (copie exactement le style du zip précédent) */
+</style>
 </head>
 <body>
-  <h1>Bienvenue sur mon site !</h1>
-  <p>Site créé en 20 minutes, gratuitement 🚀</p>
-  <a href="#" class="button">En savoir plus</a>
+<header>
+  <div>
+    <h1>Pubflix <span style="color:gray;font-size:13px;">— Prototype</span></h1>
+    <div style="color:gray;font-size:13px;">Regardez des pubs & gagnez des points</div>
+  </div>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <div id="pointsBadge" style="color:white;background:#e91e63;padding:4px 10px;border-radius:8px;">Points: 0</div>
+    <button id="btnLogin">Se connecter</button>
+    <button id="btnAdminToggle">Admin</button>
+  </div>
+</header>
+
+<main>
+  <div id="adminArea" style="display:none;">
+    <!-- panneau admin (titre, miniature, lien vidéo, durée, gain) -->
+  </div>
+
+  <section>
+    <h2 style="color:white;">Catalogue</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<div class="overlay" id="overlay" style="display:none;">
+  <!-- Popup player ici -->
+</div>
+
+<footer>
+  Prototype client-only. Données en localStorage.
+</footer>
+
+<script>
+// JS du prototype ici (copie exactement le script du zip précédent)
+</script>
 </body>
 </html>
