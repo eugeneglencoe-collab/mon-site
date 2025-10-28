@@ -1,0 +1,5 @@
+.admin-main{padding:20px;}
+.admin-panel{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:16px;border-radius:$radius-md;box-shadow:$shadow-1;}
+.form input{margin-bottom:8px;}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.btn.edit{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;}
