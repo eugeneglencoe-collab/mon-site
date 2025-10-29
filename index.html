@@ -1,140 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pubflix — Regardez. Découvrez. Gagnez.</title>
-  <meta name="description" content="Pubflix — Transformez la publicité en divertissement. Regardez des publicités vidéos sélectionnées, gagnez des points et suivez vos progrès." />
-  <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.luxe.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="page-index">
-  <header class="site-header" role="banner">
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="header-inner">
-      <div class="brand-left" role="navigation" aria-label="Logo et navigation principale">
-        <img src="https://i.imgur.com/Uzr1KqT.png" alt="Pubflix" class="logo" />
+      <div class="brand-left">
+        <img src="logo.png" alt="Logo Pubflix" class="logo">
         <div class="brand-text">
           <h1 class="brand-title">Pubflix</h1>
-          <p class="brand-tag">Regardez. Découvrez. Gagnez.</p>
+          <div class="brand-tag">Regardez. Découvrez. Gagnez.</div>
         </div>
       </div>
-
-      <nav class="main-nav" role="navigation" aria-label="Menu principal">
-        <a class="nav-link" href="index.html">Accueil</a>
-        <a class="nav-link" href="about.html">À propos</a>
-        <a class="nav-link" href="dashboard.html">Tableau de bord</a>
-        <a class="nav-link btn-cta" href="admin.html">Admin</a>
+      <nav class="main-nav">
+        <a href="#home" class="nav-link">Accueil</a>
+        <a href="#catalogue" class="nav-link">Catalogue</a>
+        <a href="#dashboard" class="nav-link">Tableau de bord</a>
+        <a href="#admin" class="nav-link">Admin</a>
       </nav>
-
-      <div class="user-area" id="userArea">
-        <button id="btnOpenLogin" class="btn ghost">Se connecter</button>
-        <div id="userMini" class="user-mini hidden" aria-live="polite">
-          <span id="miniName">Invité</span>
-          <span id="miniPoints" class="mini-points">0 pts</span>
-        </div>
+      <div class="user-mini">
+        <div class="mini-points"><span id="points">0</span> pts</div>
       </div>
     </div>
   </header>
 
-  <main role="main">
-    <section class="hero">
-      <div class="hero-inner">
-        <h2 class="hero-title">Regardez. Découvrez. Gagnez.</h2>
-        <p class="hero-lead">Pubflix transforme la publicité en une expérience cinématographique. Choisissez, regardez, gagnez des points et échangez vos récompenses (prototype).</p>
-        <div class="hero-actions">
-          <button id="btnStart" class="btn primary">Commencer maintenant</button>
-          <a href="about.html" class="btn ghost">En savoir plus</a>
-        </div>
-        <div class="social-proof">
-          <span class="proof-badge">+ 500 utilisateurs</span>
-          <span class="proof-dot">•</span>
-          <span class="proof-text">Taux de satisfaction prototype : 4.8/5</span>
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <h1 class="hero-title">Regardez. Découvrez. Gagnez.</h1>
+      <p class="hero-lead">Transformez la publicité en une expérience de découverte et de récompense.</p>
+      <div class="hero-actions">
+        <button class="btn primary" id="startBtn">Commencer</button>
+        <button class="btn ghost">En savoir plus</button>
       </div>
-    </section>
-
-    <section class="catalogue" aria-labelledby="catalog-title">
-      <div class="catalog-header">
-        <h3 id="catalog-title">Sélections recommandées</h3>
-        <div class="catalog-controls">
-          <input id="searchBox" class="search" type="search" placeholder="Rechercher une pub..." aria-label="Recherche des publicités" />
-          <select id="filterSelect" class="select">
-            <option value="all">Tous</option>
-            <option value="short">Courtes (&lt;20s)</option>
-            <option value="popular">Populaires</option>
-          </select>
-        </div>
+      <div class="social-proof">
+        <div class="proof-badge">+500 utilisateurs actifs</div>
+        <div class="proof-badge">+120 marques partenaires</div>
       </div>
+    </div>
+  </section>
 
-      <div id="grid" class="grid" role="list" aria-live="polite"></div>
-    </section>
-
-    <section class="story" aria-labelledby="why-title">
-      <div class="story-inner">
-        <h3 id="why-title">Pourquoi Pubflix ?</h3>
-        <p>Nous transformons le traditionnel "spot publicitaire" en contenu de découverte. Les marques racontent leur histoire en vidéo, et vous êtes récompensé pour votre attention. Prototype — aucun paiement automatique sans vérification.</p>
+  <!-- CATALOGUE -->
+  <section class="catalogue" id="catalogue">
+    <div class="catalog-header">
+      <h2>Catalogue de publicités</h2>
+      <div class="catalog-controls">
+        <input type="search" id="searchBar" placeholder="Rechercher une pub..." class="search">
+        <select id="filterSelect" class="select">
+          <option value="all">Toutes les catégories</option>
+          <option value="mode">Mode</option>
+          <option value="tech">Technologie</option>
+          <option value="luxe">Luxe</option>
+        </select>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="site-footer" role="contentinfo">
+    <div class="grid" id="adsGrid">
+      <!-- Les cartes de pub seront injectées ici -->
+    </div>
+  </section>
+
+  <!-- MODAL VIDEO -->
+  <div class="modal hidden" id="videoModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 id="videoTitle">Publicité</h3>
+        <button class="btn small" id="closeModal">Fermer</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="videoFrame" class="player-frame" src="" allowfullscreen></iframe>
+      </div>
+      <div class="modal-foot">
+        <div class="countdown">⏳ <span id="countdownTimer">15</span> sec</div>
+        <button id="validateBtn" disabled>Valider +10 pts</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="dashboard-main">
+    <h2>Tableau de bord</h2>
+    <div class="dashboard-top">
+      <div class="stat">
+        <h3>Total de points</h3>
+        <div class="big-num" id="totalPoints">0</div>
+      </div>
+      <div class="stat">
+        <h3>Temps total de visionnage</h3>
+        <div class="big-num" id="totalTime">0 min</div>
+      </div>
+    </div>
+    <h3>Pubs vues récemment</h3>
+    <ul class="seen-list" id="historyList"></ul>
+  </section>
+
+  <!-- ADMIN -->
+  <section id="admin" class="admin-main">
+    <h2>Espace admin</h2>
+    <div class="admin-panel">
+      <form id="addAdForm" class="form">
+        <input type="text" id="adTitle" placeholder="Titre" required>
+        <input type="text" id="adImage" placeholder="URL de l'image" required>
+        <input type="text" id="adVideo" placeholder="Lien vidéo YouTube" required>
+        <input type="number" id="adPoints" placeholder="Points" required>
+        <button type="submit" class="btn primary">Ajouter</button>
+      </form>
+    </div>
+    <div class="catalog-grid" id="adminGrid"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-left">
-        <img src="https://i.imgur.com/Uzr1KqT.png" alt="Pubflix" class="footer-logo" />
-        <p class="muted">© Pubflix — Prototype — Pas de paiements automatiques</p>
-      </div>
+      <div class="footer-left">© 2025 Pubflix — Tous droits réservés</div>
       <div class="footer-links">
-        <a href="about.html">À propos</a>
-        <a href="#">CGU</a>
-        <a href="#">Politique de confidentialité</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Contact</a>
       </div>
     </div>
   </footer>
 
-  <!-- Player Modal -->
-  <div id="playerModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
-    <div class="modal-card">
-      <header class="modal-head">
-        <div>
-          <h4 id="playerTitle">Titre</h4>
-          <div id="playerMeta" class="meta muted">Durée — Gain</div>
-        </div>
-        <button id="closePlayer" class="btn ghost small">Fermer</button>
-      </header>
+  <!-- TOASTS -->
+  <div class="toasts" id="toasts"></div>
 
-      <div class="modal-body">
-        <div id="playerFrame" class="player-frame" aria-hidden="false"></div>
-      </div>
-
-      <footer class="modal-foot">
-        <div id="countdown" class="countdown">00:00</div>
-        <div class="modal-actions">
-          <button id="validateBtn" class="btn primary" disabled>J'ai terminé</button>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal small hidden" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-    <div class="modal-card small">
-      <header class="modal-head">
-        <h4 id="loginTitle">Se connecter (prototype)</h4>
-      </header>
-      <div class="modal-body padded">
-        <label for="loginInput">Pseudo</label>
-        <input id="loginInput" type="text" placeholder="Votre pseudo" />
-        <small class="muted">Le prototype enregistre les données localement (localStorage).</small>
-        <div class="row" style="margin-top:12px">
-          <button id="loginConfirm" class="btn primary">Valider</button>
-          <button id="loginCancel" class="btn ghost">Annuler</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="toasts" class="toasts" aria-live="polite"></div>
-  <script src="js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
