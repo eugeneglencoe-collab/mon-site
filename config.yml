@@ -1,1 +1,6 @@
+markdown: kramdown
+theme: minima
+sass:
+  sass_dir: assets/scss
+  style: compressed
 
